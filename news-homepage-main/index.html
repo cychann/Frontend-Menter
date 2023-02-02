@@ -1,60 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | News homepage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <img src="/assets/images/logo.svg" alt="lgoo" />
+        <img
+          class="menu_icon active"
+          src="/assets/images/icon-menu.svg"
+          alt="menu"
+        />
+        <ul class="header_menu">
+          <img
+            class="menu_close_icon"
+            src="/assets/images/icon-menu-close.svg"
+            alt=""
+          />
+          <li class="first_menu">Home</li>
+          <li>New</li>
+          <li>Popular</li>
+          <li>Trending</li>
+          <li>Categories</li>
+        </ul>
+      </header>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+      <section class="main">
+        <article class="main_left">
+          <img
+            class="main_image"
+            src="/assets/images/image-web-3-desktop.jpg"
+            alt="main_image"
+          />
+          <div class="main_news_intro">
+            <p class="main_news_title">The Bright Future of Web 3.0?</p>
+            <div class="main_news_desc">
+              <p class="main_news_content">
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <button class="main_news_button">READ MORE</button>
+            </div>
+          </div>
+        </article>
+        <article class="main_rigth">
+          <h1 class="news_new">New</h1>
+          <ul class="news_lists">
+            <li class="news_list">
+              <h3 class="news_title">Hydrogen VS Electric Cars</h3>
+              <p class="news_content">
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </p>
+            </li>
+            <li class="news_list">
+              <h3 class="news_title">The Downsides of AI Artistry</h3>
+              <p class="news_content">
+                What are the possible adverse effects of on-demand AI image
+                generation?
+              </p>
+            </li>
+            <li class="news_list">
+              <h3 class="news_title">Is VC Funding Drying Up?</h3>
+              <p class="news_content">
+                Private funding by VC firms is down 50% YOY. We take a look at
+                what that means.
+              </p>
+            </li>
+          </ul>
+        </article>
+      </section>
 
-  The Bright Future of Web 3.0?
+      <section class="news_rank">
+        <ul class="news_rank_lists">
+          <li class="news_rank_list">
+            <img
+              class="news_rank_image"
+              src="/assets/images/image-retro-pcs.jpg"
+              alt="retro"
+            />
+            <div class="news_rank_desc">
+              <h3 class="news_rank_num">01</h3>
+              <p class="news_rank_title">Reviving Retro PCs</p>
+              <p class="news_rank_content">
+                What happens when old PCs are given modern upgrades?
+              </p>
+            </div>
+          </li>
+          <li class="news_rank_list">
+            <img
+              class="news_rank_image"
+              src="/assets/images/image-top-laptops.jpg"
+              alt="laptops"
+            />
+            <div class="news_rank_desc">
+              <h3 class="news_rank_num">02</h3>
+              <p class="news_rank_title">Top 10 Laptops of 2022</p>
+              <p class="news_rank_content">
+                Our best picks for various needs and budgets.
+              </p>
+            </div>
+          </li>
+          <li class="news_rank_list">
+            <img
+              class="news_rank_image"
+              src="/assets/images/image-gaming-growth.jpg"
+              alt="gaimg-growth"
+            />
+            <div class="news_rank_desc">
+              <h3 class="news_rank_num">03</h3>
+              <p class="news_rank_title">The Growth of Gaming</p>
+              <p class="news_rank_content">
+                How the pandemic has sparked fresh opportunities.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/cychann">cychann</a>.
+      </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>
