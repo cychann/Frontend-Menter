@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section class="card_preview">
+        <section class="card_preview_front">
+          <div class="circles">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+          </div>
+          <div class="card_preview_num">0000 0000 0000 0000</div>
+          <div class="card_preview_bottom">
+            <div class="card_preview_name">name</div>
+            <div class="card_preview_date">
+              <span class="card_preview_month">00 /</span>
+              <span class="card_preview_year">00</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="card_preview_cvc">
+          <div class="card_cvc_num">000</div>
+        </div>
+      </section>
+
+      <form class="card_form">
+        <div class="card_holder_name">
+          <span class="card_holder_name_title card_title">Cardholder Name</span>
+          <input
+            class="card_holder_name_input"
+            type="text"
+            placeholder="e.g. Jane Appleseed"
+            oninput="handleNameChange()"
+          />
+          <div class="name_error_message error_message"></div>
+        </div>
+
+        <div class="card_number">
+          <span class="card_number_title card_title">Card Number</span>
+          <input
+            type="text"
+            class="card_num_input"
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="19"
+            oninput="handleNumChange()"
+          />
+          <div class="number_error_message error_message"></div>
+        </div>
+
+        <div class="card_form_date">
+          <div class="card_exp_date">
+            <span class="card_exp_date_title card_title"
+              >Exp. Date (MM/YY)</span
+            >
+            <div class="card_exp_date_input">
+              <input
+                type="text"
+                class="card_exp_date_month"
+                placeholder="MM"
+                oninput="handleChangeMonth()"
+              />
+              <input
+                type="text"
+                class="card_exp_date_year"
+                placeholder="YY"
+                oninput="handleChangeYear()"
+              />
+            </div>
+            <div class="date_error_message error_message"></div>
+          </div>
+
+          <div class="card_cvc">
+            <span class="card_cvc_title card_title">CVC</span>
+            <input
+              type="text"
+              class="card_cvc_input"
+              placeholder="e.g. 123"
+              oninput="handleChangeCvc()"
+            />
+            <div class="cvc_error_message error_message"></div>
+          </div>
+        </div>
+
+        <button class="card_submit_btn">Confirm</button>
+      </form>
+
+      <div class="completed_state">
+        <img class="completed_icon" src="./images/icon-complete.svg" alt="" />
+        <span class="completed_thk">Thank you!</span>
+        <span class="completed_comment">We've added your card details</span>
+        <button class="completed_continue">Continue</button>
+      </div>
+    </div>
+
+    <!-- Completed state start -->
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

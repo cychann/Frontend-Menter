@@ -1,0 +1,259 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-violet: hsl(269, 43%, 75%);
+  --color-dark-violet: hsl(279, 31%, 49%);
+  --color-deep-dark-violet: hsl(278, 73%, 19%);
+  --color-valid: #ff0000;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.card_preview {
+  width: 100%;
+  padding: 1rem 8rem;
+}
+
+.card_preview_front {
+  background-image: url(./images/bg-card-front.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  color: var(--color-white);
+}
+
+.circles {
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.circle1 {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: var(--color-white);
+  margin-right: 1rem;
+}
+
+.circle2 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  border: 1px solid var(--color-white);
+}
+
+.card_preview_num {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.card_preview_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 300;
+}
+
+.card_preview_cvc {
+  background-image: url(./images/bg-card-back.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.card_cvc_num {
+  position: absolute;
+  top: 45%;
+  right: 30%;
+  color: var(--color-white);
+}
+
+.card_form {
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-deep-dark-violet);
+}
+
+.card_title {
+  margin-bottom: 0.5rem;
+}
+
+.card_holder_name,
+.card_number,
+.card_form_date {
+  margin-bottom: 1rem;
+}
+
+.card_holder_name_input,
+.card_num_input {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--color-deep-dark-violet);
+}
+
+.card_form_date {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card_exp_date {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+}
+
+.card_exp_date_input {
+  display: flex;
+  gap: 1rem;
+}
+
+.card_exp_date_input > input {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--color-deep-dark-violet);
+}
+
+.card_cvc {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+}
+
+.card_cvc_input {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid lightgrey;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--color-deep-dark-violet);
+}
+
+.card_submit_btn {
+  width: 100%;
+  height: 3rem;
+  background-color: var(--color-deep-dark-violet);
+  color: var(--color-white);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.completed_state {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  color: var(--color-deep-dark-violet);
+}
+
+.completed_icon {
+  margin-bottom: 1rem;
+}
+
+.completed_thk {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.completed_comment {
+  color: grey;
+  margin-bottom: 2rem;
+}
+
+.completed_continue {
+  width: 100%;
+  height: 3rem;
+  background-color: var(--color-deep-dark-violet);
+  color: var(--color-white);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.error_message {
+  color: var(--color-valid);
+  margin-top: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .card_preview {
+    max-width: 763px;
+    margin: auto;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card_preview_front {
+    padding-right: 5rem;
+  }
+  .card_preview_cvc {
+    margin: 0;
+  }
+}
+
+@media (max-width: 763px) {
+  .main {
+    padding: 1rem;
+  }
+  .card_preview {
+    padding: 0;
+  }
+}
