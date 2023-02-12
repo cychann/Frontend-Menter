@@ -1,4 +1,4 @@
-## Projects With HTML, CSS, Javascript
+## Mini Projects With HTML, CSS, Javascript
 
 | No  | Project Name                  | Site                                             |
 | --- | ----------------------------- | ------------------------------------------------ |
