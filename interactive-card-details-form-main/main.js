@@ -63,7 +63,7 @@ const checkNumber = () => {
 
   const splitNum = numInput.value.split(" ");
   const errorMsg =
-    "Wrong format, Please write in the following form `1234 5678 9101 1123`";
+    "Wrong format, Please write in the following form `**** **** **** ****`";
   const $target = document.querySelector(".number_error_message");
 
   if (splitNum.length !== 4) {
@@ -87,10 +87,42 @@ const checkNumber = () => {
 
 const checkMonthAndYear = () => {
   let isVaild = true;
-  const errorMsg = "Can't be blank";
   const $target = document.querySelector(".date_error_message");
+  const month = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
+
+  const date = new Date();
+  const currYear = date.getFullYear().toString().slice(2);
+
   if (!expMonthInput.value || !expYearInput.value) {
-    showError(errorMsg, $target);
+    showError("Can't be blank", $target);
+    isVaild = false;
+  }
+
+  if (expMonthInput.value.length !== 2 || expYearInput.value.length !== 2) {
+    showError("Please enter a date format such as 09/24 or 12/31", $target);
+    isVaild = false;
+  }
+
+  if (!month.includes(expMonthInput.value)) {
+    showError("Not a valid month format", $target);
+    isVaild = false;
+  }
+
+  if (+expYearInput.value <= currYear) {
+    showError("Enter a number greater than the current year", $target);
     isVaild = false;
   }
 
@@ -99,10 +131,14 @@ const checkMonthAndYear = () => {
 
 const checkCvc = () => {
   let isVaild = true;
-  const errorMsg = "Can't be blank";
   const $target = document.querySelector(".cvc_error_message");
   if (!cvcInput.value) {
-    showError(errorMsg, $target);
+    showError("Can't be blank", $target);
+    isVaild = false;
+  }
+
+  if (cvcInput.value.length !== 3) {
+    showError("cvc number must be 3 digits", $target);
     isVaild = false;
   }
 
@@ -119,6 +155,14 @@ const checkVaildAll = () => {
     completed.style.display = "flex";
     form.style.display = "none";
   }
+
+  if (isNameVaild) document.querySelector(".name_error_message").innerHTML = "";
+  if (isNumVaild)
+    document.querySelector(".number_error_message").innerHTML = "";
+
+  if (isDateVaild) document.querySelector(".date_error_message").innerHTML = "";
+
+  if (isCvcVaild) document.querySelector(".cvc_error_message").innerHTML = "";
 };
 
 form.addEventListener("submit", (e) => {
@@ -131,6 +175,11 @@ continueBtn.addEventListener("click", () => {
   form.style.display = "flex";
   completed.style.display = "none";
 
+  previewName.innerHTML = "name";
+  previewNum.innerHTML = "0000 0000 0000 0000";
+  previewMonth.innerHTML = "00 /";
+  previewYear.innerHTML = "00";
+  previewCvc.innerHTML = "000";
   nameInput.value = "";
   numInput.value = "";
   expMonthInput.value = "";
